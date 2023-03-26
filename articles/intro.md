@@ -10,7 +10,7 @@ DotAuth provides an SDK to build an OAuth, OpenId and UMA2 server. In addition i
 - Built-in support for JSON Web Tokens (JWT) for access token encoding and decoding.
 - Integration with popular C# frameworks, including ASP.NET and .NET Core.
 
-The acceptance criteria for the features are described using the gherkin syntax in the [features](./features/index.md) section.
+The acceptance criteria for the features are described using the gherkin syntax in the [features](../features/index.md) section.
 
 ## Installation
 

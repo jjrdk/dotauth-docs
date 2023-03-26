@@ -35,8 +35,9 @@
       },
       {
         "files": [
+          "features/*.md",
           "features/**.feature.md",
-          "index.md"
+          "features/**/toc.yml"
         ]
       }
     ],
