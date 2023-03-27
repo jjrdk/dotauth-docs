@@ -13,6 +13,13 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
+        with:
+          path: 'docs'
+      - name: Checkout DotAuth
+        uses: actions/checkout@v2
+        with:
+          repository: 'jjrdk/dotauth'
+          path: 'dotnet'
       - name: Setup .NET Core
         uses: actions/setup-dotnet@v1
         with:
@@ -25,12 +32,12 @@ jobs:
         run: dotnet restore
       - name: DocFX Build
 #        working-directory: docs
-        run: docfx docfx.json
+        run: docfx docs/docfx.json
         continue-on-error: false
       - name: Publish
         if: github.event_name == 'push'
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: _site
+          publish_dir: docs/_site
           force_orphan: true
